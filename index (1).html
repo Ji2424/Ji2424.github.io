@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eljilani Hbal — AI / ML Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F6F3;
+    --paper-alt: #EAEDE7;
+    --ink: #14181C;
+    --ink-soft: #4B534C;
+    --navy: #1F3864;
+    --red: #C1440E;
+    --line: #D3D9D0;
+    --line-strong: #B7C0B3;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --max: 780px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: -1px -1px;
+  }
+
+  a { color: var(--navy); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(244,246,243,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+  .nav-name { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; font-weight: 600; }
+  .nav-links { display: flex; gap: 22px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); text-transform: uppercase; }
+  .nav-links a:hover { color: var(--red); }
+
+  /* HERO */
+  header.hero { padding: 64px 0 40px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); margin: 0 0 14px;
+  }
+  h1 { font-size: 40px; line-height: 1.12; margin: 0 0 8px; font-weight: 700; letter-spacing: -0.01em; }
+  .role-line { font-family: var(--mono); font-size: 15px; color: var(--ink-soft); margin: 0 0 28px; }
+
+  .hero-body { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+  .hero-photo {
+    width: 132px; height: 132px; border-radius: 3px; object-fit: cover;
+    border: 1px solid var(--line-strong);
+    filter: grayscale(35%) contrast(1.02);
+  }
+  .hero-text { flex: 1; min-width: 240px; }
+  .hero-text p { margin: 0 0 12px; max-width: 46ch; }
+  .hero-meta { font-family: var(--mono); font-size: 13px; color: var(--ink-soft); }
+
+  /* SIGNATURE: benchmark ticker */
+  .ticker {
+    margin-top: 32px; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong);
+    padding: 14px 0; display: flex; gap: 40px; flex-wrap: wrap;
+  }
+  .tick { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
+  .tick b { display: block; font-size: 20px; color: var(--ink); font-weight: 600; margin-top: 4px; }
+  .tick b .u { display: block; font-size: 11px; color: var(--red); font-weight: 500; margin-top: 3px; }
+
+  /* SECTIONS */
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section > .wrap > h2 {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--navy); margin: 0 0 32px; display: flex; align-items: center; gap: 12px;
+  }
+  section > .wrap > h2::after { content: ""; flex: 1; height: 1px; background: var(--line-strong); }
+
+  /* LOG ENTRY (project) */
+  .log {
+    display: grid; grid-template-columns: 120px 1fr; gap: 24px;
+    padding: 28px 0; border-bottom: 1px solid var(--line);
+  }
+  .log:last-child { border-bottom: none; }
+  .log-date {
+    font-family: var(--mono); font-size: 12px; color: var(--red); white-space: nowrap;
+    padding-top: 3px;
+  }
+  .log h3 { font-size: 20px; margin: 0 0 8px; font-weight: 600; letter-spacing: -0.005em; }
+  .log p { margin: 0 0 16px; color: var(--ink-soft); max-width: 60ch; }
+  .log-links { display: flex; gap: 16px; font-family: var(--mono); font-size: 12px; margin-top: 4px; }
+  .log-links a { text-decoration: none; border-bottom: 1px solid var(--line-strong); padding-bottom: 1px; }
+  .log-links a:hover { color: var(--red); border-color: var(--red); }
+
+  /* benchmark bars */
+  .bench { margin: 14px 0 4px; }
+  .bench-row { display: grid; grid-template-columns: 90px 1fr 64px; align-items: center; gap: 10px; margin-bottom: 6px; font-family: var(--mono); font-size: 12px; }
+  .bench-label { color: var(--ink-soft); }
+  .bench-track { height: 9px; background: var(--paper-alt); border: 1px solid var(--line-strong); position: relative; }
+  .bench-fill { height: 100%; background: var(--navy); }
+  .bench-row.best .bench-fill { background: var(--red); }
+  .bench-row.best .bench-label { color: var(--ink); font-weight: 600; }
+  .bench-val { text-align: right; color: var(--ink); }
+
+  /* ADDITIONAL WORK */
+  .extra-list { list-style: none; margin: 0; padding: 0; }
+  .extra-list li {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15px;
+  }
+  .extra-list li:last-child { border-bottom: none; }
+  .extra-list .x-title { font-weight: 500; }
+  .extra-list .x-meta { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); display: block; }
+  .extra-list a { text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+  .extra-list a:hover { color: var(--red); border-color: var(--red); }
+
+  /* INSTRUMENTS / skills */
+  .panel { display: grid; grid-template-columns: 140px 1fr; gap: 10px 24px; }
+  .panel-row { display: contents; }
+  .panel-key {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--red);
+    padding-top: 4px; text-transform: uppercase;
+  }
+  .panel-vals { padding-bottom: 14px; border-bottom: 1px solid var(--line); color: var(--ink-soft); font-size: 14px; }
+  .panel-row:last-child .panel-vals { border-bottom: none; }
+
+  /* ABOUT */
+  .about p { max-width: 62ch; margin: 0 0 14px; color: var(--ink-soft); }
+  .about strong { color: var(--ink); font-weight: 600; }
+
+  /* CONTACT / FOOTER */
+  footer { padding: 48px 0 64px; }
+  .contact-row { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; margin-bottom: 22px; }
+  .contact-row a {
+    font-family: var(--mono); font-size: 13px; text-decoration: none; color: var(--ink);
+    border-bottom: 1px solid var(--line-strong); padding-bottom: 2px;
+  }
+  .contact-row a:hover { color: var(--red); border-color: var(--red); }
+  .foot-note { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); margin-top: 24px; }
+
+  /* reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 620px) {
+    h1 { font-size: 30px; }
+    .log { grid-template-columns: 1fr; gap: 6px; }
+    .bench-row { grid-template-columns: 76px 1fr 50px; }
+    .panel { grid-template-columns: 1fr; }
+    .panel-key { padding-top: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="nav-name">ELJILANI HBAL</span>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#instruments">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">AI / ML Engineer</p>
+    <h1>Eljilani Hbal</h1>
+    <p class="role-line">Computer vision · reinforcement learning · applied deep learning</p>
+
+    <div class="hero-body">
+      <img class="hero-photo" src="photo.png" alt="Portrait of Eljilani Hbal">
+      <div class="hero-text">
+        <p>I build deep learning and reinforcement learning systems, and I care more about proving a model works under real constraints than getting it to train once. MEng in Mechatronic and Robotic Engineering from the University of Sheffield.</p>
+        <p class="hero-meta">Based in Dubai, UAE · Open to relocation</p>
+      </div>
+    </div>
+
+    <div class="ticker">
+      <div class="tick">Mean IoU, OCT segmentation<b>0.886<span class="u">best of 3 models</span></b></div>
+      <div class="tick">AUC, biodegradability model<b>0.920<span class="u">logistic regression</span></b></div>
+      <div class="tick">Penalty sweep, RL agents<b>6<span class="u">constraint levels tested</span></b></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Work</h2>
+
+    <div class="log reveal">
+      <div class="log-date">2025.09<br>–2026.06</div>
+      <div>
+        <h3>Segmenting the stratum corneum in ultra-high-res OCT images</h3>
+        <p>An end-to-end PyTorch pipeline to automate skin-layer segmentation in Optical Coherence Tomography scans, replacing hand-crafted edge filters that fail against low-contrast tissue and speckle noise. Curated and annotated a 212-image clinical dataset, expanded to 1,272 via augmentation, then benchmarked three architectures under one evaluation protocol.</p>
+
+        <div class="bench">
+          <div class="bench-row best">
+            <span class="bench-label">U-Net++</span>
+            <div class="bench-track"><div class="bench-fill" style="width:88.6%"></div></div>
+            <span class="bench-val">0.886</span>
+          </div>
+          <div class="bench-row">
+            <span class="bench-label">U-Net</span>
+            <div class="bench-track"><div class="bench-fill" style="width:84.9%"></div></div>
+            <span class="bench-val">0.849</span>
+          </div>
+          <div class="bench-row">
+            <span class="bench-label">DeepLabV3+</span>
+            <div class="bench-track"><div class="bench-fill" style="width:79.3%"></div></div>
+            <span class="bench-val">0.793</span>
+          </div>
+        </div>
+        <p style="font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:4px;">Mean IoU by architecture. U-Net++ also holds the compute cost, ~2× the inference time of U-Net.</p>
+
+        <div class="log-links">
+          <a href="https://github.com/Ji2424/Deep-Learning-Based-Segmentation-of-the-Stratum-Corneum-in-OCT-Images" target="_blank" rel="noopener">GitHub →</a>
+          <a href="https://github.com/Ji2424/Deep-Learning-Based-Segmentation-of-the-Stratum-Corneum-in-OCT-Images" target="_blank" rel="noopener">Notebooks →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="log reveal">
+      <div class="log-date">2026.04<br>–2026.06</div>
+      <div>
+        <h3>RL-Navigation: safety vs. performance trade-offs</h3>
+        <p>A custom 8×8 Gymnasium environment built to study a question that matters far beyond grid worlds: what happens to an agent's behaviour as you raise the cost of unsafe actions? Trained PPO agents across six penalty levels and tracked task performance and safety violations independently, mapping the trade-off frontier between the two.</p>
+
+        <div class="bench">
+          <div class="bench-row">
+            <span class="bench-label">Penalty 0.0</span>
+            <div class="bench-track"><div class="bench-fill" style="width:20%;background:var(--line-strong)"></div></div>
+            <span class="bench-val">fastest</span>
+          </div>
+          <div class="bench-row">
+            <span class="bench-label">Penalty 2.0</span>
+            <div class="bench-track"><div class="bench-fill" style="width:55%"></div></div>
+            <span class="bench-val">balanced</span>
+          </div>
+          <div class="bench-row best">
+            <span class="bench-label">Penalty 10.0</span>
+            <div class="bench-track"><div class="bench-fill" style="width:92%"></div></div>
+            <span class="bench-val">safest</span>
+          </div>
+        </div>
+        <p style="font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:4px;">Longer, safer paths as the safety penalty increases, the same coefficient trade-off behind balancing helpfulness vs. harmlessness in RLHF.</p>
+
+        <div class="log-links">
+          <a href="https://github.com/Ji2424/RL-Navigation" target="_blank" rel="noopener">GitHub →</a>
+          <a href="https://colab.research.google.com/github/Ji2424/RL-Navigation/blob/main/RL_Safety_Navigation.ipynb" target="_blank" rel="noopener">Open in Colab →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="log reveal">
+      <div class="log-date">2025.10<br>–2025.12</div>
+      <div>
+        <h3>Predicting chemical biodegradability from QSAR data</h3>
+        <p>Whether a compound breaks down naturally or accumulates in the environment is a real regulatory question. Compared three classifiers on the UCI QSAR Biodegradation dataset (1,055 compounds, 41 molecular descriptors), with z-score normalisation fit only on training data to prevent leakage.</p>
+
+        <div class="bench">
+          <div class="bench-row best">
+            <span class="bench-label">Log. Reg.</span>
+            <div class="bench-track"><div class="bench-fill" style="width:88.2%"></div></div>
+            <span class="bench-val">88.2%</span>
+          </div>
+          <div class="bench-row">
+            <span class="bench-label">SVM (RBF)</span>
+            <div class="bench-track"><div class="bench-fill" style="width:87.2%"></div></div>
+            <span class="bench-val">87.2%</span>
+          </div>
+          <div class="bench-row">
+            <span class="bench-label">Naive Bayes</span>
+            <div class="bench-track"><div class="bench-fill" style="width:52.6%"></div></div>
+            <span class="bench-val">52.6%</span>
+          </div>
+        </div>
+        <p style="font-family:var(--mono);font-size:12px;color:var(--ink-soft);margin-top:4px;">Test accuracy. Naive Bayes drops off once its conditional-independence assumption meets correlated descriptors.</p>
+
+        <div class="log-links">
+          <a href="https://github.com/Ji2424/Predicting-the-Biodegradability-of-Chemicals-from-QSAR-Data-in-Matlab" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:48px;">Additional work</h2>
+    <ul class="extra-list">
+      <li>
+        <span class="x-title">ROS2 autonomous exploration with SLAM</span>
+        <span class="x-meta">TurtleBot3 · finite-state obstacle avoidance · validated on hardware</span>
+      </li>
+      <li>
+        <span class="x-title">Household energy consumption forecasting</span>
+        <span class="x-meta">Linear vs. polynomial regression · R² 0.994 · <a href="https://github.com/Ji2424/ML-Predicting-household-energy-consumption-" target="_blank" rel="noopener">GitHub</a></span>
+      </li>
+      <li>
+        <span class="x-title">Monte Carlo stock price simulation</span>
+        <span class="x-meta">Geometric Brownian motion · 10,000 paths · <a href="https://github.com/Ji2424/monte-carlo-simulation" target="_blank" rel="noopener">GitHub</a></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="instruments">
+  <div class="wrap">
+    <h2>Instruments</h2>
+    <div class="panel">
+      <div class="panel-row">
+        <div class="panel-key">Deep Learning</div>
+        <div class="panel-vals">PyTorch · CNNs · semantic segmentation (U-Net, DeepLabV3+, U-Net++) · benchmarking under unified evaluation protocols</div>
+      </div>
+      <div class="panel-row">
+        <div class="panel-key">Agentic AI</div>
+        <div class="panel-vals">LangChain · Retrieval-Augmented Generation · agentic workflow design</div>
+      </div>
+      <div class="panel-row">
+        <div class="panel-key">Reinforcement Learning</div>
+        <div class="panel-vals">Proximal Policy Optimisation (PPO) · Gymnasium · constraint-based policy evaluation</div>
+      </div>
+      <div class="panel-row">
+        <div class="panel-key">Robotics</div>
+        <div class="panel-vals">ROS2 · SLAM · sensor integration · embedded C/C++</div>
+      </div>
+      <div class="panel-row">
+        <div class="panel-key">Languages &amp; Tools</div>
+        <div class="panel-vals">Python (PyTorch, Scikit-Learn, Pandas, NumPy) · C/C++ · MATLAB · SQL (in progress) · Git · Linux</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <div class="about">
+      <p><strong>MEng, Mechatronic and Robotic Engineering</strong> — University of Sheffield, 2:1, 2022–2026. Specialised in machine learning, computer vision, and intelligent systems.</p>
+      <p>My work keeps landing on the same question in different clothes: does this system actually do what I intended, and how do I prove it rather than assume it? That question shows up whether I'm benchmarking segmentation models against clinical ground truth or watching a reinforcement learning agent's behaviour drift as I change its constraints.</p>
+      <p>Native Arabic speaker, based in Dubai, UAE. Open to relocation.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2 style="font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy);margin:0 0 24px;">Contact</h2>
+    <div class="contact-row">
+      <a href="mailto:Jhbal7426@gmail.com">Jhbal7426@gmail.com</a>
+      <a href="https://github.com/Ji2424" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/eljilani-hbal-1a167a255/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="foot-note">Dubai, UAE — © 2026 Eljilani Hbal</p>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
