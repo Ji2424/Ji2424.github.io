@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eljilani Hbal — AI / ML Engineer</title>
+<title>Eljilani Hbal, AI / ML Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -71,7 +71,7 @@
 
   .hero-grid { display: grid; grid-template-columns: 120px 1fr; gap: 28px; align-items: start; }
   .hero-photo {
-    width: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(100%) contrast(1.1);
+    width: 100%; aspect-ratio: 1; object-fit: cover;
     border: 1px solid var(--line);
   }
   .hero-text p { margin: 0 0 14px; max-width: 52ch; color: var(--ink); }
@@ -179,14 +179,14 @@
 
 <header class="hero">
   <div class="wrap">
-    <p class="index-num">AI / ML ENGINEER — DUBAI, UAE</p>
+    <p class="index-num">AI / ML ENGINEER, DUBAI, UAE</p>
     <h1>Eljilani<br>Hbal</h1>
     <p class="role-line">Computer vision · reinforcement learning · applied deep learning</p>
 
     <div class="hero-grid">
       <img class="hero-photo" src="photo.png" alt="Portrait of Eljilani Hbal">
       <div class="hero-text">
-        <p>I build deep learning and reinforcement learning systems, and I care more about proving a model works under real constraints than getting it to train once. MEng in Mechatronic and Robotic Engineering from the University of Sheffield.</p>
+        <p>I like building things that have to actually work, not just demo well once. Most of what's here comes from asking the same question in different forms: does this model, agent, or system really do what I intended, and how do I check that instead of assuming it. MEng in Mechatronic and Robotic Engineering, University of Sheffield.</p>
         <p class="hero-meta">Open to relocation</p>
       </div>
     </div>
@@ -194,15 +194,15 @@
     <div class="stats">
       <div class="stat">
         <div class="stat-num">0.886</div>
-        <div class="stat-label">Mean IoU — OCT segmentation</div>
+        <div class="stat-label">Mean IoU, OCT segmentation</div>
       </div>
       <div class="stat">
         <div class="stat-num">0.920</div>
-        <div class="stat-label">AUC — biodegradability model</div>
+        <div class="stat-label">AUC, biodegradability model</div>
       </div>
       <div class="stat">
         <div class="stat-num">06</div>
-        <div class="stat-label">Constraint levels — RL agent sweep</div>
+        <div class="stat-label">Constraint levels, RL agent sweep</div>
       </div>
     </div>
   </div>
@@ -215,7 +215,7 @@
     <div class="proj reveal">
       <div class="proj-head">
         <span class="proj-title">Segmenting the stratum corneum in ultra-high-res OCT images</span>
-        <span class="proj-date">2025.09 — 2026.06</span>
+        <span class="proj-date">2025.09 to 2026.06</span>
       </div>
       <p>An end-to-end PyTorch pipeline to automate skin-layer segmentation in Optical Coherence Tomography scans, replacing hand-crafted edge filters that fail against low-contrast tissue and speckle noise. Curated and annotated a 212-image clinical dataset, expanded to 1,272 via augmentation, then benchmarked three architectures under one evaluation protocol.</p>
 
@@ -247,7 +247,7 @@
     <div class="proj reveal">
       <div class="proj-head">
         <span class="proj-title">RL-Navigation: safety vs. performance trade-offs</span>
-        <span class="proj-date">2026.04 — 2026.06</span>
+        <span class="proj-date">2026.04 to 2026.06</span>
       </div>
       <p>A custom 8×8 Gymnasium environment built to study a question that matters far beyond grid worlds: what happens to an agent's behaviour as you raise the cost of unsafe actions? Trained PPO agents across six penalty levels and tracked task performance and safety violations independently, mapping the trade-off frontier between the two.</p>
 
@@ -268,7 +268,7 @@
           <span class="metric-val">safest</span>
         </div>
       </div>
-      <p class="metric-note">Longer, safer paths as the safety penalty increases — the same coefficient trade-off behind balancing helpfulness vs. harmlessness in RLHF.</p>
+      <p class="metric-note">Longer, safer paths as the safety penalty increases. It's the same coefficient trade-off behind balancing helpfulness and harmlessness in RLHF.</p>
 
       <div class="proj-links">
         <a href="https://github.com/Ji2424/RL-Navigation" target="_blank" rel="noopener">GitHub →</a>
@@ -279,7 +279,7 @@
     <div class="proj reveal">
       <div class="proj-head">
         <span class="proj-title">Predicting chemical biodegradability from QSAR data</span>
-        <span class="proj-date">2025.10 — 2025.12</span>
+        <span class="proj-date">2025.10 to 2025.12</span>
       </div>
       <p>Whether a compound breaks down naturally or accumulates in the environment is a real regulatory question. Compared three classifiers on the UCI QSAR Biodegradation dataset (1,055 compounds, 41 molecular descriptors), with z-score normalisation fit only on training data to prevent leakage.</p>
 
@@ -310,14 +310,14 @@
     <div class="proj reveal">
       <div class="proj-head">
         <span class="proj-title">Pipebots: an underground pipe inspection robot</span>
-        <span class="proj-date">2024.10 — 2025.05</span>
+        <span class="proj-date">2024.10 to 2025.05</span>
       </div>
       <img class="proj-photo" src="pipebots.jpg" alt="Pipebots quadruped inspection robot with camera and modular legs, on a photo backdrop">
       <p>A multidisciplinary group project under the UKRI Pipebots initiative, building a legged robot small enough to inspect underground pipes that people and larger vehicles can't reach. My focus was the embedded and control side: assembling and testing the modular leg design, writing embedded C++ for system checks, battery management, and sensor logic, and building a base station interface to manage communications and pre-deployment diagnostics.</p>
       <p class="metric-note">Simulated demo code ahead of hardware arrival so software was ready the moment the robot was, then supported hardware-software integration and power testing across different operating conditions.</p>
     </div>
 
-    <div class="sec-head" style="margin-top:16px;"><span class="sec-num">—</span><h2>Additional work</h2></div>
+    <div class="sec-head" style="margin-top:16px;"><span class="sec-num">+</span><h2>Additional work</h2></div>
     <ul class="extra-list">
       <li>
         <span class="extra-title">ROS2 autonomous exploration with SLAM</span>
@@ -367,8 +367,8 @@
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">03</span><h2>About</h2></div>
     <div class="about">
-      <p><strong>MEng, Mechatronic and Robotic Engineering</strong> — University of Sheffield, 2:1, 2022–2026. Specialised in machine learning, computer vision, and intelligent systems.</p>
-      <p>My work keeps landing on the same question in different clothes: does this system actually do what I intended, and how do I prove it rather than assume it? That question shows up whether I'm benchmarking segmentation models against clinical ground truth or watching a reinforcement learning agent's behaviour drift as I change its constraints.</p>
+      <p><strong>MEng, Mechatronic and Robotic Engineering,</strong> University of Sheffield, 2:1, 2022 to 2026. Specialised in machine learning, computer vision, and intelligent systems.</p>
+      <p>I spend most of my time on evaluation, not just building. It's easy to get a model to train or an agent to run once. It's harder, and more useful, to actually check whether it's doing the right thing, and to be honest when it isn't.</p>
       <p>Native Arabic speaker, based in Dubai, UAE. Open to relocation.</p>
     </div>
   </div>
@@ -382,7 +382,7 @@
       <a href="https://github.com/Ji2424" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/eljilani-hbal-1a167a255/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <p class="foot-note">Dubai, UAE — © 2026 Eljilani Hbal</p>
+    <p class="foot-note">Dubai, UAE · © 2026 Eljilani Hbal</p>
   </div>
 </footer>
 
